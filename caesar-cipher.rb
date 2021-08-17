@@ -1,19 +1,24 @@
 def caesar_cipher(string, key)
-
+    working_set = string.chars
+    numberize(working_set)
+    cipher_shift(working_set, key)
+    characterize(working_set)
+    return working_set.join
 end
 
 def numberize(array)
-    array.map do |x|
+    array.map! do |x|
         x = x.ord
     end
 end
 
 def characterize(array)
-    array.map do |x|
-        x = x.ord
+    array.map! do |x|
+        x = x.chr
     end
 end
 
+# cipher_shift takes an array, offsets the numbers within, 
 def cipher_shift(array, offset)
     # binding.pry
     array.map! do |x|
